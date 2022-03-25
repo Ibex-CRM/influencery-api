@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_01_152810) do
+ActiveRecord::Schema.define(version: 2022_03_25_183558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,10 @@ ActiveRecord::Schema.define(version: 2021_06_01_152810) do
     t.string "profile_pic_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "tags_id", null: false
+    t.integer "primary_tag_id"
     t.index ["platform_id"], name: "index_influencers_on_platform_id"
+    t.index ["tags_id"], name: "index_influencers_on_tags_id"
   end
 
   create_table "platforms", force: :cascade do |t|
@@ -50,4 +53,5 @@ ActiveRecord::Schema.define(version: 2021_06_01_152810) do
   add_foreign_key "influencer_tags", "influencers"
   add_foreign_key "influencer_tags", "tags"
   add_foreign_key "influencers", "platforms"
+  add_foreign_key "influencers", "tags", column: "tags_id"
 end
