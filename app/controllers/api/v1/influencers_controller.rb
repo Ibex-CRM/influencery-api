@@ -4,4 +4,3 @@ class Api::V1::InfluencersController < ApplicationController
     render json: @influencers
   end
 end
-
