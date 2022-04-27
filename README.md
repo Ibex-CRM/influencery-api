@@ -37,3 +37,10 @@ The influencer_serializer will have to be updated.
 There is no testing framework on this project so you'll need to debug the code in your console.
 
 EXTRA CREDIT Add in relevent validations for our models.
+
+## What I have done
+
+- [x] 1. Add a primary_tag field to the Influencer model. This should reference a Tag ID and every Influencer MUST have a primary_tag.
+- [x] 2. The influencer_serializer will have to be updated.
+- [x] 3. Fix rails db:seed errors.
+- [ ] 4. EXTRA CREDIT Add in relevant validations for our models.
